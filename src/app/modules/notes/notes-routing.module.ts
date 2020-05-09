@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NotePageComponent } from "./note-page/note-page.component";
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: NotePageComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
