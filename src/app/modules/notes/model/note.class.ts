@@ -2,7 +2,7 @@ export class Note {
   constructor(
     private _title: string,
     private _text: string,
-    private _id?: string,
+    private _id?: number,
   ) {}
 
   get title() {
