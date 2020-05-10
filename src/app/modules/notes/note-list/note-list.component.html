@@ -16,7 +16,7 @@
   <input type="text" class="form-control" formControlName="text"/>
 
   <div class="btn-group">
-    <button type="button" (click)="onSaveEdit()" class="btn btn-success">Save</button>
+    <button type="button" [disabled]="!noteEditForm.valid" (click)="onSaveEdit()" class="btn btn-success">Save</button>
     <button type="button" (click)="onCancelEdit()" class="btn btn-warning">Cancel</button>
   </div>
 </div>
