@@ -12,6 +12,15 @@ export const noteReducer = (
         notes: [...action.payload]
       };
 
+    case ENotesActions.ADD_NOTE:
+      return {
+        ...state,
+        notes: [
+          ...state.notes,
+          action.payload
+        ]
+      };
+
     default:
       return state;
   }

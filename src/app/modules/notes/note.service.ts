@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { RootState } from '../../store/state/root.state';
 import { Note } from './model/note.class';
-import { LoadNotes } from '../../store/actions/note.actions';
+import { AddNote, LoadNotes } from '../../store/actions/note.actions';
 
 export const BASE_URL = 'http://localhost:3000/';
 
@@ -16,10 +16,17 @@ export class NoteService {
   ) {
   }
 
-  loadNotes(): void {
+  public loadNotes(): void {
     this.http.get<Note[]>(BASE_URL + 'notes')
       .subscribe(notes => {
         this.store.dispatch(new LoadNotes(notes));
+      });
+  }
+
+  public addNote(note: Note) {
+    this.http.post<Note>(BASE_URL + 'notes', note)
+      .subscribe(resNote => {
+        this.store.dispatch(new AddNote(resNote));
       });
   }
 }

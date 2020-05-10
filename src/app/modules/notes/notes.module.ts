@@ -7,6 +7,7 @@ import { NoteListComponent } from './note-list/note-list.component';
 import { NotePageComponent } from './note-page/note-page.component';
 import {NoteService} from './note.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     NotesRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     NoteService

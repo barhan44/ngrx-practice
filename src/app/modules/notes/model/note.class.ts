@@ -1,19 +1,7 @@
 export class Note {
   constructor(
-    private _title: string,
-    private _text: string,
-    private _id?: number,
+    private title: string,
+    private text: string,
+    private id?: number
   ) {}
-
-  get title() {
-    return this._title;
-  }
-
-  get text() {
-    return this._text;
-  }
-
-  get id() {
-    return this._id;
-  }
 }
