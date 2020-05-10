@@ -27,4 +27,8 @@ export class NoteFormComponent {
     this.noteService.addNote(note);
     this.noteForm.reset();
   }
+
+  clearForm() {
+    this.noteForm.reset();
+  }
 }
