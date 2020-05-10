@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { RootState } from '../../store/state/root.state';
 import { Note } from './model/note.class';
-import { AddNote, LoadNotes } from '../../store/actions/note.actions';
+import { AddNote, DeleteNote, LoadNotes } from '../../store/actions/note.actions';
 
 export const BASE_URL = 'http://localhost:3000/';
 
@@ -27,6 +27,13 @@ export class NoteService {
     this.http.post<Note>(BASE_URL + 'notes', note)
       .subscribe(resNote => {
         this.store.dispatch(new AddNote(resNote));
+      });
+  }
+
+  public deleteNote(note: Note) {
+    this.http.delete<Note>(BASE_URL + 'notes/' + note.id)
+      .subscribe(() => {
+        this.store.dispatch(new DeleteNote(note));
       });
   }
 }

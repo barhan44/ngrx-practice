@@ -21,6 +21,14 @@ export const noteReducer = (
         ]
       };
 
+    case ENotesActions.DELETE_NOTE:
+      return {
+        ...state,
+        notes: [
+          ...state.notes.filter(n => n.id !== action.payload.id)
+        ]
+      };
+
     default:
       return state;
   }
