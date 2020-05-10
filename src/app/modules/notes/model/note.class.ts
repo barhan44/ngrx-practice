@@ -1,7 +1,7 @@
 export class Note {
   constructor(
-    private title: string,
-    private text: string,
-    private id?: number
+    public title: string,
+    public text: string,
+    public id?: number
   ) {}
 }
