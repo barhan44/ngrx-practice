@@ -29,6 +29,17 @@ export const noteReducer = (
         ]
       };
 
+    case ENotesActions.UPDATE_NOTE:
+      return {
+        ...state,
+        notes: [...state.notes.map(n => {
+          if (n.id === action.payload.id) {
+            return action.payload;
+          }
+          return n;
+        })]
+      };
+
     default:
       return state;
   }

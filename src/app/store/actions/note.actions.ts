@@ -4,7 +4,8 @@ import { Note } from '../../modules/notes/model/note.class';
 export enum ENotesActions {
   LOAD_NOTES = 'LOAD_NOTES',
   ADD_NOTE = 'ADD_NOTE',
-  DELETE_NOTE = 'DELETE_NOTE'
+  DELETE_NOTE = 'DELETE_NOTE',
+  UPDATE_NOTE = 'UPDATE_NOTE'
 }
 
 export class LoadNotes implements Action {
@@ -34,4 +35,13 @@ export class DeleteNote implements Action {
   }
 }
 
-export type NotesActions = LoadNotes | AddNote | DeleteNote;
+export class UpdateNote implements Action {
+  public readonly type = ENotesActions.UPDATE_NOTE;
+
+  constructor(
+    public payload: Note
+  ) {
+  }
+}
+
+export type NotesActions = LoadNotes | AddNote | DeleteNote | UpdateNote;

@@ -19,4 +19,8 @@ export class NoteListComponent {
   onNoteDelete(): void {
     this.noteService.deleteNote(this.note);
   }
+
+  onNoteEdit() {
+    this.noteService.updateNote(this.note);
+  }
 }
