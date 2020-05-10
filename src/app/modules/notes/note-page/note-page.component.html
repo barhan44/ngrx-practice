@@ -1,2 +1,3 @@
 <app-note-form></app-note-form>
-<app-note-list></app-note-list>
+
+<app-note-list [note]="note" *ngFor="let note of (noteState$ | async).notes"></app-note-list>

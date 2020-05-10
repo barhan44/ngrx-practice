@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from "./components/components.module";
+import { ComponentsModule } from './components/components.module';
 import { StoreModule } from '@ngrx/store';
-import { appReducers } from "./store/reducers/app.reducers";
+import { appReducers } from './store/reducers/app.reducers';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { appReducers } from "./store/reducers/app.reducers";
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-    StoreModule.forRoot(appReducers, {})
+    StoreModule.forRoot(appReducers)
   ],
   providers: [],
   bootstrap: [AppComponent]

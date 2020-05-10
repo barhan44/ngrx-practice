@@ -1,6 +1,5 @@
-import { ENotesActions, NotesActions } from "../actions/note.actions";
-import { Note } from "../../modules/notes/model/note.class";
-import { initialNoteState, INoteState } from "../state/note.state";
+import { ENotesActions, NotesActions } from '../actions/note.actions';
+import { initialNoteState, INoteState } from '../state/note.state';
 
 export const noteReducer = (
   state = initialNoteState,
@@ -10,10 +9,10 @@ export const noteReducer = (
     case ENotesActions.LOAD_NOTES:
       return {
         ...state,
-        notes: [new Note('Title', 'Text', 1)]
-      }
+        notes: [...action.payload]
+      };
 
     default:
       return state;
   }
-}
+};

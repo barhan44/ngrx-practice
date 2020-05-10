@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Note } from '../model/note.class';
 
 @Component({
   selector: 'app-note-list',
   templateUrl: './note-list.component.html',
   styleUrls: ['./note-list.component.scss']
 })
-export class NoteListComponent implements OnInit {
+export class NoteListComponent {
 
-  constructor() { }
+  @Input() note: Note;
 
-  ngOnInit(): void {
+  constructor() {
   }
 
 }

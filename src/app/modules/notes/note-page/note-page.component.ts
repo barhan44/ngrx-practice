@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { INoteState } from '../../../store/state/note.state';
+import { RootState } from '../../../store/state/root.state';
+import { Store } from '@ngrx/store';
+import { NoteService } from '../note.service';
 
 @Component({
   selector: 'app-note-page',
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotePageComponent implements OnInit {
 
-  constructor() { }
+  public noteState$: Observable<INoteState>;
+
+  constructor(
+    private store: Store<RootState>,
+    private noteService: NoteService
+  ) {
+    this.noteService.loadNotes();
+  }
 
   ngOnInit(): void {
+    this.noteState$ = this.store.select('notes');
   }
 
 }
