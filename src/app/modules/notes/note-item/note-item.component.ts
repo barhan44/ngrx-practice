@@ -1,25 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { Note } from '../model/note.class';
 import { NoteService } from '../note.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-note-item',
   templateUrl: './note-item.component.html',
-  styleUrls: ['./note-item.component.scss']
+  styleUrls: ['./note-item.component.scss'],
 })
 export class NoteItemComponent implements OnInit {
-
   @Input() note: Note;
 
   noteEditForm: FormGroup;
 
   editMode = false;
 
-  constructor(
-    private noteService: NoteService
-  ) {
-  }
+  constructor(private noteService: NoteService) {}
 
   ngOnInit(): void {
     this.initEditForm();
@@ -28,7 +25,7 @@ export class NoteItemComponent implements OnInit {
   private initEditForm() {
     this.noteEditForm = new FormGroup({
       title: new FormControl(this.note.title, Validators.required),
-      text: new FormControl(this.note.text, Validators.required)
+      text: new FormControl(this.note.text, Validators.required),
     });
   }
 

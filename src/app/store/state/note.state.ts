@@ -5,5 +5,5 @@ export interface INoteState {
 }
 
 export const initialNoteState: INoteState = {
-  notes: []
+  notes: [],
 };

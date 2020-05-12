@@ -1,12 +1,12 @@
-import { initialNoteState, INoteState } from "./note.state";
+import { initialNoteState, INoteState } from './note.state';
 
 export interface RootState {
-  notes: INoteState
+  notes: INoteState;
 }
 
 export const initialRootState: RootState = {
-  notes: initialNoteState
-}
+  notes: initialNoteState,
+};
 
 export function getInitialRootState() {
   return initialRootState;

@@ -9,35 +9,32 @@ export const noteReducer = (
     case ENotesActions.LOAD_NOTES:
       return {
         ...state,
-        notes: [...action.payload]
+        notes: [...action.payload],
       };
 
     case ENotesActions.ADD_NOTE:
       return {
         ...state,
-        notes: [
-          ...state.notes,
-          action.payload
-        ]
+        notes: [...state.notes, action.payload],
       };
 
     case ENotesActions.DELETE_NOTE:
       return {
         ...state,
-        notes: [
-          ...state.notes.filter(n => n.id !== action.payload.id)
-        ]
+        notes: [...state.notes.filter((n) => n.id !== action.payload.id)],
       };
 
     case ENotesActions.UPDATE_NOTE:
       return {
         ...state,
-        notes: [...state.notes.map(n => {
-          if (n.id === action.payload.id) {
-            return action.payload;
-          }
-          return n;
-        })]
+        notes: [
+          ...state.notes.map((n) => {
+            if (n.id === action.payload.id) {
+              return action.payload;
+            }
+            return n;
+          }),
+        ],
       };
 
     default:

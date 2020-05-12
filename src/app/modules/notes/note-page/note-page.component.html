@@ -1,3 +1,6 @@
 <app-note-form></app-note-form>
 
-<app-note-item [note]="note" *ngFor="let note of (noteState$ | async)?.notes"></app-note-item>
+<app-note-item
+  [note]="note"
+  *ngFor="let note of (noteState$ | async)?.notes"
+></app-note-item>

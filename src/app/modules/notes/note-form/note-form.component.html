@@ -1,13 +1,36 @@
 <div class="form-group" [formGroup]="noteForm">
   <label for="note-title">Title</label>
-  <input type="text" formControlName="title" class="form-control" id="note-title" placeholder="Enter title..."/>
+  <input
+    type="text"
+    formControlName="title"
+    class="form-control"
+    id="note-title"
+    placeholder="Enter title..."
+  />
 
   <label for="note-text">Text</label>
-  <input type="text" formControlName="text" class="form-control" id="note-text" placeholder="Enter text..."/>
+  <input
+    type="text"
+    formControlName="text"
+    class="form-control"
+    id="note-text"
+    placeholder="Enter text..."
+  />
 </div>
 
-<button type="button" [disabled]="!noteForm.valid" (click)="onAddNote()" class="btn btn-primary btn-lg btn-block">Add
-  Note
+<button
+  type="button"
+  [disabled]="!noteForm.valid"
+  (click)="onAddNote()"
+  class="btn btn-primary btn-lg btn-block"
+>
+  Add Note
 </button>
-<button type="button" [disabled]="!noteForm.valid" (click)="clearForm()" class="btn btn-warning btn-lg btn-block">Cancel
+<button
+  type="button"
+  [disabled]="!noteForm.valid"
+  (click)="clearForm()"
+  class="btn btn-warning btn-lg btn-block"
+>
+  Cancel
 </button>
