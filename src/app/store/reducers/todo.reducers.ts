@@ -18,6 +18,19 @@ export const todoReducer = (
         todos: [...state.todos, action.payload],
       };
 
+    case ETodosActions.UPDATE_TODO:
+      return {
+        ...state,
+        todos: [
+          ...state.todos.map((t) => {
+            if (t.id === action.payload.id) {
+              return action.payload;
+            }
+            return t;
+          }),
+        ],
+      };
+
     default:
       return state;
   }

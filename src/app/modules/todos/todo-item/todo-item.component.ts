@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Todo } from '../../../store/model/todo.class';
+import { TodosService } from '../todos.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -10,7 +11,15 @@ import { Todo } from '../../../store/model/todo.class';
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
 
-  constructor() {}
+  constructor(private todosService: TodosService) {}
 
   ngOnInit(): void {}
+
+  onCompleteTask() {
+    this.todosService.updateTodo({ ...this.todo, completed: true });
+  }
+
+  onIncompleteTask() {
+    this.todosService.updateTodo({ ...this.todo, completed: false });
+  }
 }

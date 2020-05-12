@@ -4,7 +4,11 @@ import { Store } from '@ngrx/store';
 
 import { RootState } from '../../store/state/root.state';
 import { Todo } from '../../store/model/todo.class';
-import { AddTodo, LoadTodos } from '../../store/actions/todo.actions';
+import {
+  AddTodo,
+  LoadTodos,
+  UpdateTodo,
+} from '../../store/actions/todo.actions';
 
 export const BASE_URL = 'http://localhost:3000/';
 
@@ -23,6 +27,14 @@ export class TodosService {
       .post<Todo>(BASE_URL + 'todos', todo)
       .subscribe((resTodo: Todo) => {
         this.store.dispatch(new AddTodo(resTodo));
+      });
+  }
+
+  public updateTodo(todo: Todo): void {
+    this.http
+      .put(BASE_URL + 'todos/' + todo.id, todo)
+      .subscribe((resTodo: Todo) => {
+        this.store.dispatch(new UpdateTodo(resTodo));
       });
   }
 }

@@ -3,4 +3,21 @@
     <h5 class="card-title">{{ todo.title }}</h5>
     <p class="card-text">{{ todo.text }}</p>
   </div>
+  <div class="card-footer">
+    <button
+      *ngIf="!todo.completed"
+      class="btn btn-success"
+      (click)="onCompleteTask()"
+    >
+      Complete
+    </button>
+    <button
+      *ngIf="todo.completed"
+      class="btn btn-warning"
+      (click)="onIncompleteTask()"
+    >
+      Incomplete
+    </button>
+    <button class="btn btn-danger">Delete</button>
+  </div>
 </div>
