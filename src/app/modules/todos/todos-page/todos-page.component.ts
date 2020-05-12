@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ITodoState } from '../../../store/state/todo.state';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { ITodoState } from '../../../store/state/todo.state';
 import { RootState } from '../../../store/state/root.state';
 import { TodosService } from '../todos.service';
 

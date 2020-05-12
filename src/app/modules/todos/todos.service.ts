@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RootState } from '../../store/state/root.state';
 import { Store } from '@ngrx/store';
+
+import { RootState } from '../../store/state/root.state';
 import { Todo } from '../../store/model/todo.class';
 import { LoadTodos } from '../../store/actions/todo.actions';
 
