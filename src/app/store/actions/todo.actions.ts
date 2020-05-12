@@ -4,6 +4,7 @@ import { Todo } from '../model/todo.class';
 
 export enum ETodosActions {
   LOAD_TODOS = 'LOAD_TODOS',
+  ADD_TODO = 'ADD_TODO',
 }
 
 export class LoadTodos implements Action {
@@ -12,4 +13,10 @@ export class LoadTodos implements Action {
   constructor(public payload: Todo[]) {}
 }
 
-export type TodosActions = LoadTodos;
+export class AddTodo implements Action {
+  public readonly type = ETodosActions.ADD_TODO;
+
+  constructor(public payload: Todo) {}
+}
+
+export type TodosActions = LoadTodos | AddTodo;

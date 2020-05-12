@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { RootState } from '../../store/state/root.state';
 import { Todo } from '../../store/model/todo.class';
-import { LoadTodos } from '../../store/actions/todo.actions';
+import { AddTodo, LoadTodos } from '../../store/actions/todo.actions';
 
 export const BASE_URL = 'http://localhost:3000/';
 
@@ -13,8 +13,16 @@ export class TodosService {
   constructor(private http: HttpClient, private store: Store<RootState>) {}
 
   public loadTodos(): void {
-    this.http.get(BASE_URL + 'todos').subscribe((todos: Todo[]) => {
+    this.http.get<Todo[]>(BASE_URL + 'todos').subscribe((todos: Todo[]) => {
       this.store.dispatch(new LoadTodos(todos));
     });
+  }
+
+  public addTodo(todo: Todo): void {
+    this.http
+      .post<Todo>(BASE_URL + 'todos', todo)
+      .subscribe((resTodo: Todo) => {
+        this.store.dispatch(new AddTodo(resTodo));
+      });
   }
 }

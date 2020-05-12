@@ -12,6 +12,12 @@ export const todoReducer = (
         todos: [...action.payload],
       };
 
+    case ETodosActions.ADD_TODO:
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
+
     default:
       return state;
   }
