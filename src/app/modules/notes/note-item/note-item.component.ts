@@ -4,11 +4,11 @@ import { NoteService } from '../note.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-note-list',
-  templateUrl: './note-list.component.html',
-  styleUrls: ['./note-list.component.scss']
+  selector: 'app-note-item',
+  templateUrl: './note-item.component.html',
+  styleUrls: ['./note-item.component.scss']
 })
-export class NoteListComponent implements OnInit {
+export class NoteItemComponent implements OnInit {
 
   @Input() note: Note;
 
