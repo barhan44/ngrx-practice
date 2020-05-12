@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { Note } from '../model/note.class';
+import { Note } from '../../../store/model/note.class';
 import { NoteService } from '../note.service';
 
 @Component({

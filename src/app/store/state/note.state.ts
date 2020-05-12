@@ -1,4 +1,4 @@
-import { Note } from '../../modules/notes/model/note.class';
+import { Note } from '../model/note.class';
 
 export interface INoteState {
   notes: Note[];

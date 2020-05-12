@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 
 import { RootState } from '../../store/state/root.state';
-import { Note } from './model/note.class';
+import { Note } from '../../store/model/note.class';
 import {
   AddNote,
   DeleteNote,
