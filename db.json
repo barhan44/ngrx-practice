@@ -15,5 +15,13 @@
       "title": "Title 3",
       "text": "Text 3"
     }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "title": "TodoTitle_1",
+      "text": "TodoSomething_1",
+      "completed": false
+    }
   ]
 }
