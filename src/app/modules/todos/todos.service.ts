@@ -6,6 +6,7 @@ import { RootState } from '../../store/state/root.state';
 import { Todo } from '../../store/model/todo.class';
 import {
   AddTodo,
+  DeleteTodo,
   LoadTodos,
   UpdateTodo,
 } from '../../store/actions/todo.actions';
@@ -36,5 +37,11 @@ export class TodosService {
       .subscribe((resTodo: Todo) => {
         this.store.dispatch(new UpdateTodo(resTodo));
       });
+  }
+
+  public deleteTodo(todo: Todo): void {
+    this.http.delete(BASE_URL + 'todos/' + todo.id).subscribe(() => {
+      this.store.dispatch(new DeleteTodo(todo));
+    });
   }
 }

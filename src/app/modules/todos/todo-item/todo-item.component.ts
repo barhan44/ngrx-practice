@@ -22,4 +22,8 @@ export class TodoItemComponent implements OnInit {
   onIncompleteTask() {
     this.todosService.updateTodo({ ...this.todo, completed: false });
   }
+
+  onDeleteTask() {
+    this.todosService.deleteTodo(this.todo);
+  }
 }

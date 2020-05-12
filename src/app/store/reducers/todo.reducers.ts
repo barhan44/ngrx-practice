@@ -31,6 +31,12 @@ export const todoReducer = (
         ],
       };
 
+    case ETodosActions.DELETE_TODO:
+      return {
+        ...state,
+        todos: [...state.todos.filter((t) => t.id !== action.payload.id)],
+      };
+
     default:
       return state;
   }
