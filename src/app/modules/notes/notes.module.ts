@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { NotesRoutingModule } from './notes-routing.module';
 import { NoteFormComponent } from './note-form/note-form.component';
@@ -15,7 +15,6 @@ import { NoteService } from './note.service';
     CommonModule,
     NotesRoutingModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
   ],
   providers: [NoteService],
