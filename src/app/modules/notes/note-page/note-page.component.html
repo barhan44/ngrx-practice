@@ -1,6 +1,14 @@
-<app-note-form></app-note-form>
+<div class="row mb-3 mt-3">
+  <div class="col">
+    <app-note-form></app-note-form>
+  </div>
+</div>
 
-<app-note-item
-  [note]="note"
-  *ngFor="let note of (noteState$ | async)?.notes"
-></app-note-item>
+<div class="row">
+  <div class="col">
+    <app-note-item
+      [note]="note"
+      *ngFor="let note of (noteState$ | async)?.notes"
+    ></app-note-item>
+  </div>
+</div>

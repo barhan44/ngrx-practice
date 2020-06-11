@@ -1,5 +1,13 @@
-<app-todo-form></app-todo-form>
-<app-todo-item
-  [todo]="todo"
-  *ngFor="let todo of (todoState$ | async)?.todos"
-></app-todo-item>
+<div class="row mb-3 mt-3">
+  <div class="col">
+    <app-todo-form></app-todo-form>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-todo-item
+      [todo]="todo"
+      *ngFor="let todo of (todoState$ | async)?.todos"
+    ></app-todo-item>
+  </div>
+</div>
