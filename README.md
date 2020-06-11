@@ -1,5 +1,9 @@
 # NgrxPractice
 
-## Development server
+## Running
 
-Run `npm start dev` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Download required packages
+```npm install```
+
+### Start application
+```npm run dev```
